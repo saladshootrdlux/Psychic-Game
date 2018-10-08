@@ -3,6 +3,7 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 // Variables for tracking our wins, losses and ties. They begin at 0.
+
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
@@ -14,6 +15,12 @@ console.log(computerChoice)
 
 // When the user presses a key, it will run the following function...
 
+reset=function (){
+    guessesLeft=10;
+    lettersGuessed=("");
+}
+
+
 document.onkeypress = function (event) {
     var userGuess = event.key;
     var evt = evt || window.event;
@@ -22,7 +29,6 @@ document.onkeypress = function (event) {
 
     if (userGuess === computerChoice) {
         wins++;
-        alert("You Win");
     } else {
         guessesLeft--;
     }
@@ -48,13 +54,6 @@ document.onkeypress = function (event) {
     
     // reset();
 
+
+    
 }
-
-
-// function reset() {
-//     document.getElementById('wins').innerHTML = "Wins: " + wins;
-//     document.getElementById('losses').innerHTML = "Losses: " + losses;
-//     document.getElementById("lettersGuessed").innerHTML = "Letters Guessed: ";
-//     document.getElementById('guessesLeft').innerHTML = "Guesses Left: 10";
-// }
-
